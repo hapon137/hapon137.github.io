@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman czaju zaparz</title>
+</head>
+<body>
+<div>
+    <p>Rune</p>
+    <label for="runem"></label>
+    <input type="number" name="runem"/>
+    <label for="runec"></label>
+    <input type="number" name="runec"/>
+    <label for="runeq"></label>
+    <input type="number" name="runeq"/>
+</div>
+<!-- <div>
+    <p>Ring</p>
+    <label for="ringmq"></label>
+    <input type="number" name="ringmq"/>
+    <label for="ringmd"></label>
+    <input type="number" name="ringmd"/>
+    <label for="ringc"></label>
+    <input type="number" name="ringc"/>
+    <label for="ringd"></label>
+    <input type="number" name="ringd"/>
+</div>
+<div>
+    <p>Food</p>
+    <label for="basemq">Base mana reg q</label>
+    <input type="number" name="basemq"/>
+    <label for="basemd">Base mana reg d</label>
+    <input type="number" name="basemd"/>
+    <label for="foodc">Food c</label>
+    <input type="number" name="foodc"/>
+    <label for="foodd">Food d</label>
+    <input type="number" name="foodd"/>
+</div> -->
+<input type="button" onclick="calc()" value="Show">
 
+<script type="text/javascript">
+var runemana;
+var runecost;
+var runequa;
+var ringcost = 2000;
+var ringmana = 12;
+var ringpersec = 2;
+var ringdur = 450;
+var basemana = 2;
+var basepersec = 2;
+var foodcost = 10;
+var fooddur = 264;
+var blankrunecost = 10;
+var profit,time;
+function calc(){
+    runemana = document.getElementById("runem").value;
+    runecost = document.getElementById("runec").value;
+    runequa = document.getElementById("runeq").value;
+
+    manaperrune = runemana / runequa; //150
+    manaprodsumpersec = ringmana / ringpersec + basemana / basepersec; //7
+    prodcostpersec = ringcost / ringdur + foodcost / fooddur;
+    time = manaperrune / manaprodsumpersec;
+    profit = runecost - (blankrunecost + prodcostpersec * time);
+
+    document.write("Profit per rune"+profit);
+    document.write("Time per rune"+time);
+}
+</script>
+    
+</body>
+</html>
