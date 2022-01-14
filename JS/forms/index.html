@@ -17,15 +17,19 @@
 
     <h1>Zad 2</h1>
     <form id="zad2">
-        <input list="zad2list">
-        <input type="number" id="ilosc" placeholder="m2">
-        <input type="button" onclick="zad1()">
+        <!-- <input list="zad2list">
         <datalist id="zad2list">
             <option value="Malowanie"></option>
             <option value="Układanie płytek"></option>
             <option value="Gipsowanie ścian"></option>
-            <option value="Panie co tak drogo?"></option>
-        </datalist>
+        </datalist> -->
+        <select id="zad2list">
+            <option value="500">Malowanie</option>
+            <option value="600">Układanie płytek</option>
+            <option value="300">Gipsowanie ścian</option>
+        </select>
+        <input type="number" id="ilosc" placeholder="m2">
+        <input type="button" onclick="zad2()">
     </form>
 
     <script type="text/javascript">
@@ -38,7 +42,11 @@
             miasto = String(miasto[0]).toLocaleUpperCase() + String(miasto).substring(1).toLowerCase();
             document.write(imie+" "+nazwisko+" "+miasto)
         }
-
+        function zad2(){
+            var selectedOption = document.getElementById("zad2list").value;
+            var squareMeters = document.getElementById("squareMeters").value;
+            document.write("Cena"+(selectedOption*squareMeters));
+        }
     </script>
 </body>
 </html>
