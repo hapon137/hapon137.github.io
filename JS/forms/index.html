@@ -32,6 +32,9 @@
         <input type="button" onclick="zad3()" value="click">
     </form>
 
+    <h1>Zad 4</h1>
+    
+
     <script type="text/javascript">
         function zad1(){
             var imie = document.getElementById("imie").value;
@@ -45,14 +48,14 @@
         function zad2(){
             var selectedOption = document.getElementById("zad2list").value;
             var squareMeters = document.getElementById("squareMeters").value;
-            document.write("Cena"+(selectedOption*squareMeters));
+            document.write("Cena "+(selectedOption*squareMeters));
         }
         function zad3(){
-            var email = document.getElementById("email").value;
+            var email = String(document.getElementById("email").value);
             var isCorrect = false;
-            email.forEach(char => {
-                if(char == "@") isCorrect = true;
-            });
+            for(i=0;i<email.length;i++){
+                if(email[i] == "@") isCorrect = true;
+            }
             if(isCorrect) document.write("prawidlowy")
             else document.write("nieprawidlowy");
         }
