@@ -26,6 +26,12 @@
         <input type="button" onclick="zad2()" value="click">
     </form>
 
+    <h1>Zad 3</h1>
+    <form id="zad3">
+        <input type="email" id="email">
+        <input type="button" onclick="zad3()" value="click">
+    </form>
+
     <script type="text/javascript">
         function zad1(){
             var imie = document.getElementById("imie").value;
@@ -40,6 +46,15 @@
             var selectedOption = document.getElementById("zad2list").value;
             var squareMeters = document.getElementById("squareMeters").value;
             document.write("Cena"+(selectedOption*squareMeters));
+        }
+        function zad3(){
+            var email = document.getElementById("email").value;
+            var isCorrect = false;
+            email.forEach(char => {
+                if(char == "@") isCorrect = true;
+            });
+            if(isCorrect) document.write("prawidlowy")
+            else document.write("nieprawidlowy");
         }
     </script>
 </body>
