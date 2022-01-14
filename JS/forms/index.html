@@ -33,6 +33,10 @@
     </form>
 
     <h1>Zad 4</h1>
+    <form id="zad4">
+        <input type="number" id="pesel">
+        <input type="button" onclick="zad4()" value="click">
+    </form>
     
 
     <script type="text/javascript">
@@ -58,6 +62,19 @@
             }
             if(isCorrect) document.write("prawidlowy")
             else document.write("nieprawidlowy");
+        }
+        function zad4(){
+            var pesel = String(document.getElementById("pesel").value);
+            if(pesel.length != 11) {
+                document.write("Pesel sklada sie z 11 cyfr");
+                return;
+            }
+            var y = pesel[0]+pesel[1];
+            var m = pesel[2]+pesel[3];
+            var d = pesel[4]+pesel[5];
+            document.write(y+"-"+m+"-"+d);
+
+
         }
     </script>
 </body>
