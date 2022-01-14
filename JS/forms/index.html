@@ -7,11 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Zad 1</h1>
     <form id="zad1">
-        <input id="imie" type="text" title="imie">
-        <input id="nazwisko" type="text" title="nazwisko">
-        <input id="miasto" type="text" title="miasto">
+        <input id="imie" type="text" placeholder="imie">
+        <input id="nazwisko" type="text" placeholder="nazwisko">
+        <input id="miasto" type="text" placeholder="miasto">
         <input type="button" onclick="zad1()">
+    </form>
+
+    <h1>Zad 2</h1>
+    <form id="zad2">
+        <input list="zad2list">
+        <input type="number" id="ilosc" placeholder="m2">
+        <input type="button" onclick="zad1()">
+        <datalist>
+            <option value="Malowanie"></option>
+            <option value="Układanie płytek"></option>
+            <option value="Gipsowanie ścian"></option>
+            <option value="Panie co tak drogo?"></option>
+        </datalist>
     </form>
 
     <script type="text/javascript">
@@ -24,6 +38,7 @@
             miasto = String(miasto[0]).toLocaleUpperCase() + String(miasto).substring(1).toLowerCase();
             document.write(imie+" "+nazwisko+" "+miasto)
         }
+
     </script>
 </body>
 </html>
